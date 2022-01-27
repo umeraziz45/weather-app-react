@@ -29,7 +29,7 @@ function App() {
   // eventHandler atttached to the submit button. Triggers API call with new search query
   const submitCity = (event) => {
     event.preventDefault();
-    getData()
+    getData();
   }
 
   //API call nested in useEffect with empty dependency array
@@ -78,38 +78,46 @@ function App() {
   return (
     <div className="App">
 
-      <div className="searchBar">
+      <div className="wrapper">
 
-        <form action="">
+        <div className="searchBar">
 
-          <input 
-          type="text" 
-          onChange={userInput} 
-          placeholder='Enter City Name'
-          />
+          <form action="">
 
-          <button onClick={submitCity}> Get Weather Data</button>
+            <input 
+            type="text" 
+            onChange={userInput} 
+            placeholder='Enter City Name'
+            className='locationInput'
+            />
 
-        </form>
+            <button className='locationQuery' onClick={submitCity}> Get Weather Data</button>
+
+          </form>
+
+        </div>
+
+        {
+          cityPhoto.length > 0 ?
+          <DisplayWeatherData
+          temp={weatherInfo.temp}
+          feelsLike={weatherInfo.feels_like}
+          tempMin={weatherInfo.temp_min}
+          tempMax={weatherInfo.temp_max}
+          humidity={weatherInfo.humidity}
+          submitCity={submitCity}
+          userInput={userInput}
+          imgSrc={cityPhoto[0].urls.raw}
+          imgAltText={cityPhoto[0].alt_description}         
+          /> :
+          null
+
+        }
 
       </div>
 
-      {
-        cityPhoto.length > 0 ?
-        <DisplayWeatherData
-        temp={weatherInfo.temp}
-        feelsLike={weatherInfo.feels_like}
-        tempMin={weatherInfo.temp_min}
-        tempMax={weatherInfo.temp_max}
-        humidity={weatherInfo.humidity}
-        submitCity={submitCity}
-        userInput={userInput}
-        imgSrc={cityPhoto[0].urls.raw}
-        imgAltText={cityPhoto[0].alt_description}         
-        /> :
-        null
+      <footer className='footer'> Made at Juno 2022 </footer>
 
-      }
 
 
     </div>
