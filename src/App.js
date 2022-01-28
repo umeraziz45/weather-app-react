@@ -14,7 +14,7 @@ function App() {
   // OpenWeatherAPI endpoint and key
   const apiKeyWeather = '7bdbfb7799ae2ccaf862515d0e38d2ea';
 
-  const apiUrlWeather = `http://api.openweathermap.org/data/2.5/weather?q=${cityLocation}&appid=${apiKeyWeather}&units=metric`
+  const apiUrlWeather = `https://api.openweathermap.org/data/2.5/weather?q=${cityLocation}&appid=${apiKeyWeather}&units=metric`
 
   //UnSPlash API endpoint and key
   const apiKeyPhoto = '5oDAndkGaxLG69pL6nwYgcD6PQ8qbm4iVZz7bxUEKxs';
@@ -79,7 +79,7 @@ function App() {
     <div className="App">
 
         <header className='appTitle'>
-          <h1>Weather McWeatherFace</h1>
+          <h1>How Is the Weather Today?</h1>
         </header>
 
       <div className="wrapper">
