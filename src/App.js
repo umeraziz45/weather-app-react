@@ -7,7 +7,7 @@ function App() {
 
   // condition ? <expression if true> : <expression if false>
   // One state for thew weather api, photo api, and the third for user input
-  const [ cityLocation, setCityLocation ] = useState("London");
+  const [ cityLocation, setCityLocation ] = useState("Toronto");
   const [ weatherInfo, setweatherInfo ] = useState({});
   const [ cityPhoto, setCityPhoto ] = useState([]);
 
@@ -78,7 +78,12 @@ function App() {
   return (
     <div className="App">
 
+        <header className='appTitle'>
+          <h1>Weather McWeatherFace</h1>
+        </header>
+
       <div className="wrapper">
+
 
         <div className="searchBar">
 
